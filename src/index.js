@@ -18,4 +18,11 @@ app.use((req, res, next) => {
   });
 });
 
+// if (process.env.IS_OFFLINE) {
+//   app.listen(3000, () => {
+//     console.log("Server running on port 3000");
+//   });
+// }
+
 module.exports.handler = serverless(app);
+module.exports.app = app;
