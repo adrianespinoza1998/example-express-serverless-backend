@@ -7,8 +7,6 @@ const app = express();
 
 app.use(express.json());
 
-// app.post("/customers", createCustomer);
-// app.get("/customers", getCustomers);
 app.use("/customers", customerRoutes);
 
 app.use((req, res, next) => {
@@ -17,11 +15,11 @@ app.use((req, res, next) => {
   });
 });
 
-// if (process.env.IS_OFFLINE) {
-//   app.listen(3000, () => {
-//     console.log("Server running on port 3000");
-//   });
-// }
+if (process.env.IS_OFFLINE) {
+  app.listen(3000, () => {
+    console.log("Server running on port 3000");
+  });
+}
 
 module.exports.handler = serverless(app);
 module.exports.app = app;

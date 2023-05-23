@@ -5,7 +5,7 @@ provider:
   name: aws
   runtime: nodejs18.x
   environment:
-    #Enviroment variables
+    DYNAMODB_CUSTOMER_TABLE: 
   iam:
     role:
       statements:
@@ -40,3 +40,10 @@ resources:
 
 plugins:
   - serverless-offline
+
+custom:
+  serverless-offline:
+  httpPort: 3000
+  useChildProcesses: true
+  useSeparateProcesses: false
+  maxEventLoopExecutionTime: 6000
