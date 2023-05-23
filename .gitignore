@@ -5,6 +5,5 @@ jspm_packages
 # Serverless directories
 .serverless
 
-test
 .env
 serverless.yml
