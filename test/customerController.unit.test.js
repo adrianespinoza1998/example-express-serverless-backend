@@ -4,7 +4,7 @@ const { app } = require("../src/index");
 describe("CustomerController", () => {
   it("should create a customer", async () => {
     const name = "test";
-    const email = "TEST@TEST";
+    const email = "test@test.com";
 
     const response = await request(app)
       .post("/customers")
